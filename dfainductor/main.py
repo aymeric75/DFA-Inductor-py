@@ -90,6 +90,8 @@ def cli(input_: str,
             try:
                 with click.open_file(output, mode='w') as file:
                     file.write(str(dfa))
+                with open(output[:-4]+".pckl", "wb") as f:
+                    pickle.dump(dfa, f)
             except IOError as err:
                 log_error('Something wrong with an output file: \'{0}\': {1}'.format(output, err))
                 log_info('Dumping found DFA to console instead.')
