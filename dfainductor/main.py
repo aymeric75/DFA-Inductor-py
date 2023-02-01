@@ -94,7 +94,7 @@ def cli(input_: str,
                 print(os.getcwd())  
                 print("the dir")
                 print(output[:-4])
-                with open(output[:-4]+"pckl", "wb") as f:
+                with open(output[:-4]+".pckl", "wb") as f:
                     pickle.dump(dfa, f)
             except IOError as err:
                 log_error('Something wrong with an output file: \'{0}\': {1}'.format(output, err))
