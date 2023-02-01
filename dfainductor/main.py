@@ -1,7 +1,7 @@
 import sys
 import os
 import click
-
+import pickle
 from . import examples
 from .__about__ import __version__
 from .algorithms.searchers import LSUS
