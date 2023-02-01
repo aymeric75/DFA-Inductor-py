@@ -1,5 +1,5 @@
 import sys
-
+import os
 import click
 
 from . import examples
@@ -90,6 +90,10 @@ def cli(input_: str,
             try:
                 with click.open_file(output, mode='w') as file:
                     file.write(str(dfa))
+ 
+                print(os.getcwd())  
+                print("the dir")
+                print(output[:-4])
                 with open(output[:-4]+".pckl", "wb") as f:
                     pickle.dump(dfa, f)
             except IOError as err:
